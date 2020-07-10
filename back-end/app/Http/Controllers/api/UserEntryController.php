@@ -32,8 +32,13 @@ class UserEntryController extends Controller
             }
             $current_pos++;
         }
-        $saida['question_count'] = Question::count('id');
-        $saida['entry_total'] = UserEntry::count('id');
+        $saida_temp = $saida;
+        $saida = [];
+        $saida['data'] = $saida_temp;
+
+
+        $saida['more_info']['question_count'] = Question::count('id');
+        $saida['more_info']['entry_total'] = UserEntry::count('id');
         return $saida;
     }
 

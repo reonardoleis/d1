@@ -49,7 +49,7 @@ export default {
               }
               for (let answer of temp_array.data[i].answers) {
                 temp_array.data[i].chartdata.labels.push(answer.text);
-                temp_array.data[i].chartdata.datasets[0].data.push(answer.percentage);
+                temp_array.data[i].chartdata.datasets[0].data.push(answer.percentage.toFixed(2));
                 temp_array.data[i].chartdata.datasets[0].backgroundColor.push('#' + Math.floor(Math.random()*16777215).toString(16));
               }
             }
